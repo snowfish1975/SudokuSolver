@@ -48,7 +48,7 @@ def test_not(i, j):
         if (field[vert_shift][horiz_shift] != '0'): cur[ord(field[vert_shift][horiz_shift]) - 49] = '0'
     return ''.join(sorted(cur))
 
-f = total_found()
+f = start_found = total_found()
 prev_found = 0
 while f < 81:
     for i in range (9):
@@ -64,7 +64,7 @@ while f < 81:
     # считаем оставшиеся пустые клетки
     f = total_found()
     if f == prev_found:
-        print (f'Сдаюсь! Смог заполнить только {f} значений')
+        print (f'Сдаюсь! Смог заполнить только {f} значений при начально известных {start_found}')
         break
     prev_found = f
 for i in range(9):
